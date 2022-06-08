@@ -67,7 +67,7 @@ int main(){
                 fflush(stdin);
                 printf("\n* Nome: ");
                 getchar();
-                fgets(paciente.Nome, MAXTAM, stdin);
+                gets(paciente.Nome);
 
                 Enfileira(&filaVacinacao, &paciente);
                 strcpy(reg.chave, paciente.Nome);
@@ -101,7 +101,8 @@ int main(){
             case 5:
                 printf("\nDigite o nome do paciente que você quer pesquisar:\n");
                 getchar();
-                fgets(search_name, MAXTAM, stdin);
+                fflush(stdin);
+                gets(search_name);
                 int n = pesquisa_seq(&Tabela, search_name);
                 if(n == 0){
                     printf("\n!! O Paciente | %s | não consta na base de dados !!\n", search_name);
